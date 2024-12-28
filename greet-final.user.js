@@ -1,7 +1,7 @@
 (function () {
     const buttonHtml = '<button id="insertTextButton" class="btn btn-default btn-sm">👋</button>';
 
-    // Добавляем кнопку
+    // Adding button
     function addButton() {
         const PREVIEW_BUTTON = document.querySelector('[data-marker="preview/button"]');
         const existingButton = document.querySelector('#insertTextButton');
@@ -42,7 +42,7 @@
         input.dispatchEvent(event);
     }
 
-    // Проверяем или получаем текстовое поле
+    // getting textarea field
     function getTextFieldOrHandleMutation() {
         let isFieldChecked = false; 
         const TEXT_FIELD = document.querySelector('[data-userscript-marker="comment-field/textarea"]');
@@ -56,7 +56,7 @@
         }
         return TEXT_FIELD;
     }
-
+    // observer
     const observer = new MutationObserver((mutationsList) => {
         for (const mutation of mutationsList) {
             getTextFieldOrHandleMutation();
